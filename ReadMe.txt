@@ -4,10 +4,11 @@ TI1 P1 SS14 Aufgabenzettel1 A3
 
 Check-Liste
 ===========
-kein Komma am Anfang oder Ende?
+Kein Komma am Anfang oder Ende?
 Ergebnis für 13 = 133 ?
 Wird Overflow erkannt?
 Test: -13, 0, 1, 2, 3, 49 (bei 32bit 48-> neg/1.Overflow und 49-> pos)
+Kein break, kein return – assert für Exception
 
 
 
