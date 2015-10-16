@@ -20,10 +20,11 @@
 #                  further checks added
 # 15/10/14  v2.20  by Schaefers,Michael
 #                  first version after "DF97L12"/slowly dying harddisk
-# 15/10/15  v2.22  by Schaefers,Michael
-#                  cleanup of history
+# 15/10/16  v2.23  by Schaefers,Michael
+#                  adding note for potential problem with access rights:
+#                  regarding  "chmod 644"  win10 <-> bash
 #
-tmpCheckInScriptVersion="v2.22 151015"
+tmpCheckInScriptVersion="v2.23 151016"
 #
 #----------------------------------------------------------------------------
 # PURPOSE (&usage)
@@ -117,8 +118,8 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cp  "${tmpScriptName}"  "${tmpScriptName}_copy4git.off"
 cp  "${PATH2SCRIPTs4GITBASH}/coreCheckIn.bash"  "coreCheckIn.bash_copy4git.off"
-chmod  644  "${tmpScriptName}_copy4git.off"
-chmod  644  "coreCheckIn.bash_copy4git.off"
+chmod  644  "${tmpScriptName}_copy4git.off"                                     # potential access right problem: "win10<->bash"  resulting in ignored chmod command
+chmod  644  "coreCheckIn.bash_copy4git.off"                                     # potential access right problem: "win10<->bash"  resulting in ignored chmod command
 git add -f "${tmpScriptName}_copy4git.off"
 git add -f "coreCheckIn.bash_copy4git.off"
 
