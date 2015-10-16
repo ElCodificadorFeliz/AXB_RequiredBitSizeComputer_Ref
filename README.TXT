@@ -38,6 +38,6 @@ Sind Variablennamen sinnvoll gewählt?
 History
 =======
 #09/01  WS15/16  (TI1 P1 AZ#2) A2.3    bitbucket.org/schaefers/P1_A2x3_BlueJ_Pilot         1.Pilot mit BlueJ (spätere "Aufgabenposition" unklar)
-#--/--  SS15     (TI1 P1 AZ#3) A3.2    bitbucket.org/schaefers/JnkP_P1_AZ3_A3x2            ("Klassiker" - Idee/Aufgabe von Philipp Jenke)
+#--/--  SS15     (TI1 P1 AZ#3) A3.2    bitbucket.org/schaefers/JnkP_P1_AZ3_A3x2            ("Klassiker" - Idee/Aufgabe übernommen von Philipp Jenke)
 ......  .......  ..................    ................................................    ...
 Zyklus  Semester Aufgabe               VCS
