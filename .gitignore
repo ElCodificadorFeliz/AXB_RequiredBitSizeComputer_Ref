@@ -3,11 +3,11 @@
 # untracked files:
 #=================
 
-# exclude the very check-in script, since problems might occur if check-in script checks itself in
+# exclude the very check-in script, since problems might occur, if check-in script checks itself in
 check-in
 
 
-# exclude just everything - only the wanted stuff is included afterwards by !....
+# exclude just everything - only the wanted stuff is (re-)included afterwards by !....
 *
 
 
@@ -40,7 +40,7 @@ Thumbs.db
 
 # (re-)include required BlueJ files
 !package.bluej
-!bluej.pkg                              # check if this is really required
+!bluej.pkg                              # check, if this is really required
 #
 #  *.ctxt   is excluded, since (re-)produced by compiler
 #  *.class  is excluded, since (re-)produced by compiler
