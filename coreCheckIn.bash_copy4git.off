@@ -14,10 +14,12 @@
 # 14/12/23  v2.00  by Schaefers,Michael since original got lost with stolen laptop
 # 15/04/03  v2.11  by Schaefers,Michael echo version & other stuff
 # 15/04/16  v2.12  by Schaefers,Michael show untracked&ignored files -> "git status -u --ignored"
+# 15/10/20  v2.13  by Schaefers,Michael adding simple version check
 #
 # status : still under (never ending) development
 
-tmpCoreCheckInBashVersion="v2.12 150420"
+tmpCoreCheckInBashVersion="v2.13 151020"
+
 
 
 
@@ -25,6 +27,13 @@ tmpCoreCheckInBashVersion="v2.12 150420"
 # identify script itself
 #~~~~~~~~~~~~~~~~~~~~~~~
 echo ${0##*/} ${tmpCoreCheckInBashVersion}
+#
+tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_core_script_version.txt`
+if [ "${tmpLocalExpectedVersion}"  !=  "${tmpCoreCheckInBashVersion}" ] ; then
+    echo -e "\e[01;31mcheck version: \"${tmpLocalExpectedVersion}\" was expected for core check-in script.\e[00m"
+    #    ^^! ---red---....................................................................................normal
+    exit -1
+fi
 
 # identify bash
 #~~~~~~~~~~~~~~

@@ -20,11 +20,10 @@
 #                  further checks added
 # 15/10/14  v2.20  by Schaefers,Michael
 #                  first version after "DF97L12"/slowly dying harddisk
-# 15/10/16  v2.23  by Schaefers,Michael
-#                  adding note for potential problem with access rights:
-#                  regarding  "chmod 644"  win10 <-> bash
+# 15/10/20  v2.24  by Schaefers,Michael
+#                  adding simple version check
 #
-tmpCheckInScriptVersion="v2.23 151016"
+tmpCheckInScriptVersion="v2.24 151020"
 #
 #----------------------------------------------------------------------------
 # PURPOSE (&usage)
@@ -66,6 +65,13 @@ tmpScriptName=${0##*/}
 # identify script itself
 #~~~~~~~~~~~~~~~~~~~~~~~
 echo ${tmpScriptName} ${tmpCheckInScriptVersion}
+#
+tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_client_version.txt`
+if [ "${tmpLocalExpectedVersion}"  !=  "${tmpCheckInScriptVersion}" ] ; then
+    echo -e "\e[01;31mcheck version: \"${tmpLocalExpectedVersion}\" was expected for client check-in script.\e[00m"
+    #    ^^! ---red---......................................................................................normal
+    exit -1
+fi
 
 
 
