@@ -20,10 +20,10 @@
 #                  further checks added
 # 15/10/14  v2.20  by Schaefers,Michael
 #                  first version after "DF97L12"/slowly dying harddisk
-# 15/10/20  v2.24  by Schaefers,Michael
-#                  adding simple version check
+# 15/10/22  v2.25  by Schaefers,Michael
+#                  marking added for other users to show areas where adaptations might be required
 #
-tmpCheckInScriptVersion="v2.24 151020"
+tmpCheckInScriptVersion="v2.25 151022"
 #
 #----------------------------------------------------------------------------
 # PURPOSE (&usage)
@@ -48,6 +48,11 @@ tmpCheckInScriptVersion="v2.24 151020"
 
 
 
+###
+### do neccessry script adaptations here
+###
+###vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
 # declare your branch name             HERE
 # (it must NOT be "master")             |
 #                                      VVV
@@ -55,6 +60,19 @@ tmpLocalExpectedDevelopmentBranchName="dev"
 #                                      ^^^
 #                                       |
 #                                      HERE
+
+
+# declare expected script version      HERE
+#                                       |
+#                       VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_client_version.txt`
+#                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                                       |
+#                                      HERE
+
+###^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###
+###
 
 
 
@@ -65,8 +83,9 @@ tmpScriptName=${0##*/}
 # identify script itself
 #~~~~~~~~~~~~~~~~~~~~~~~
 echo ${tmpScriptName} ${tmpCheckInScriptVersion}
-#
-tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_client_version.txt`
+
+# check scipt version
+#~~~~~~~~~~~~~~~~~~~~
 if [ "${tmpLocalExpectedVersion}"  !=  "${tmpCheckInScriptVersion}" ] ; then
     echo -e "\e[01;31mcheck version: \"${tmpLocalExpectedVersion}\" was expected for client check-in script.\e[00m"
     #    ^^! ---red---......................................................................................normal

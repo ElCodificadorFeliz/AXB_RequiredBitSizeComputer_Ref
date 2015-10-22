@@ -15,10 +15,32 @@
 # 15/04/03  v2.11  by Schaefers,Michael echo version & other stuff
 # 15/04/16  v2.12  by Schaefers,Michael show untracked&ignored files -> "git status -u --ignored"
 # 15/10/20  v2.13  by Schaefers,Michael adding simple version check
+# 15/10/22  v2.14  by Schaefers,Michael marking added for other users to show areas where adaptations might be required
 #
 # status : still under (never ending) development
 
-tmpCoreCheckInBashVersion="v2.13 151020"
+tmpCoreCheckInBashVersion="v2.14 151022"
+
+
+
+
+
+###
+### do neccessry script adaptations here
+###
+###vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+# declare expected script version      HERE
+#                                       |
+#                       VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVvVVVV
+tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_core_script_version.txt`
+#                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                                       |
+#                                      HERE
+
+###^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###
+###
 
 
 
@@ -28,7 +50,6 @@ tmpCoreCheckInBashVersion="v2.13 151020"
 #~~~~~~~~~~~~~~~~~~~~~~~
 echo ${0##*/} ${tmpCoreCheckInBashVersion}
 #
-tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_core_script_version.txt`
 if [ "${tmpLocalExpectedVersion}"  !=  "${tmpCoreCheckInBashVersion}" ] ; then
     echo -e "\e[01;31mcheck version: \"${tmpLocalExpectedVersion}\" was expected for core check-in script.\e[00m"
     #    ^^! ---red---....................................................................................normal
