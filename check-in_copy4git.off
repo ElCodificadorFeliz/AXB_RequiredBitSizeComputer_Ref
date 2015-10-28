@@ -21,7 +21,7 @@
 # 15/10/14  v2.20  by Schaefers,Michael
 #                  first version after "DF97L12"/slowly dying harddisk
 # 15/10/22  v2.25  by Schaefers,Michael
-#                  marking added for other users to show areas where adaptations might be required
+#                  marks added for other users to show areas where adaptations might be required
 #
 tmpCheckInScriptVersion="v2.25 151022"
 #
@@ -70,6 +70,8 @@ tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_client_ver
 #                                       |
 #                                      HERE
 
+
+# note: PATH2SCRIPTs4GITBASH must be set in .../etc/profile
 ###^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ###
 ###
