@@ -16,10 +16,11 @@
 # 15/04/16  v2.12  by Schaefers,Michael show untracked&ignored files -> "git status -u --ignored"
 # 15/10/20  v2.13  by Schaefers,Michael adding simple version check
 # 15/10/22  v2.14  by Schaefers,Michael marking added for other users to show areas where adaptations might be required
+# 15/11/08  v2.15  by Schaefers,Michael adaptions as result of "script location moved"
 #
 # status : still under (never ending) development
 
-tmpCoreCheckInBashVersion="v2.14 151022"
+tmpCoreCheckInBashVersion="v2.15 151108"
 
 
 
@@ -32,9 +33,9 @@ tmpCoreCheckInBashVersion="v2.14 151022"
 
 # declare expected script version      HERE
 #                                       |
-#                       VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVvVVVV
-tmpLocalExpectedVersion=`cat /c/X/GIT/SCRIPT_VERSION_CONTROL/check-in_core_script_version.txt`
-#                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                       VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+tmpLocalExpectedVersion=`cat /c/X/GIT/CHECKIN_SCRIPT_VERSION_CONTROL/check-in_core_script_version.txt`
+#                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #                                       |
 #                                      HERE
 
