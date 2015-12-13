@@ -1,49 +1,36 @@
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-# untracked files:
-#=================
-
-# exclude the very check-in script, since problems might occur, if check-in script checks itself in
-check-in
-
-
-# exclude just everything - only the wanted stuff is (re-)included afterwards by !....
-*
-
-
-# exclude annoying stuff
-#
-# DOSe
-Thumbs.db
-#
-# Mac OS X
-.DS_Store
-
-
-
-
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-# except / tracked files: -> !...
-#================================
-
-# (re-)include GIT related files
+# Unfortunately,
+#->     *                       # wont work part1 :'-(
+#->     !**/.java               # wont work part2 :'-(
+# is not working - you can NOT reinclude files in directories this way
+# hence: try to do something similiar to exclude everything and then reinclude *.java source afterwards
+/*
 !.gitignore
-
-# (re-)include project description related files
 !readme.md
 !ReadMe.txt
-
-# (re-)include source code
-!*.java
-
-# (re-)include required BlueJ files
 !package.bluej
-!bluej.pkg                              # check, if this is really required
+!/*.java
 #
-#  *.ctxt   is excluded, since (re-)produced by compiler
-#  *.class  is excluded, since (re-)produced by compiler
+#
+# exclude BlueJ/project specific stuff:
+**/*.class
+**/*.ctxt
+**/doc
+
+
+
+
+
+# for safety's sake
+#==================
+#
+# OS specific:
+# exclude annoying stuff: DOSe
+**/Thumbs.db
+# exclude annoying stuff: Mac OS X
+**/.DS_Store
+#
+# exclude the very check-in script, since problems might occur, if check-in script checks itself in
+check-in
 
 
 
