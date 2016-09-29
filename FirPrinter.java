@@ -1,11 +1,11 @@
 
 /**
- * A2x3: Fir - see task
+ * A2x3: Fir Printer - see task
  * 
  * @author   Michael Schäfers ; P1@Hamburg-UAS.eu 
  * @version  2015/10/28
  */
-public class TestFrameForA2x3 {
+public class FirPrinter {
     
     /**
      * print fir
