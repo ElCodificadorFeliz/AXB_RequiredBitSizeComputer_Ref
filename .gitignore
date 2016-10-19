@@ -33,7 +33,6 @@
 #
 # exclude the very synchronize script (respectively "check-in" script), since problems might occur, if synchronize script checks itself in (synchronize was named check-in before)
 synchronizeWithOriginMasterBranch.bash
-check-in
 
 
 
