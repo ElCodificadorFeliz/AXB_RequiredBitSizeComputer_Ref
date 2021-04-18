@@ -1,3 +1,3 @@
 module AXB_RequiredBitSizeComputer_Ref {
-	requires junit;
+    requires org.junit.jupiter.api;
 }//module

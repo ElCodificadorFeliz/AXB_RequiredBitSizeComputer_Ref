@@ -3,7 +3,7 @@
 ###--------------------///^^^\\\--------------------
 ################################################################################
 ###
-###     P1 SS20 (ITS1)  A-B: RequiredBitSizeComputer
+###     P1 SS21 (ITS1)  A-B: RequiredBitSizeComputer
 ###     ============================================
 ###
 
@@ -36,7 +36,8 @@ Check-Liste
 
 History
 =======
-02/#12  SS20     (ITS1 P1 AZ#1) Z1.3    git@git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref   Eclipse 4.15.x  AdoptOpenJDK 11.6.0
+03/#13  SS21     (ITS1 P1 AZ#1) A1.6    git@git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref   Eclipse 4.19.x (21-03) ,  AdoptOpenJDK 11.0.10+9 ,  JUnit5
+02/#12  SS20     (ITS1 P1 AZ#1) Z1.3    git@git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref   Eclipse 4.15.x  AdoptOpenJDK 11.0.6  (<-11.6.0)
 01/#11  WS17/18  (TI1  P1 AZ#2) Z2.1    BitBucket.org:schaefers/Prg_Px_A-B_RequiredBitSizeComputer_Ref              Eclipse 4.7
 --/#--  WS16/17  (WI1  P1)              "In Der Vorlesung"                                                          BlueJ
 --/#--  WS15/16  (TI1  P1)              "In Der Vorlesung"                                                          BlueJ
