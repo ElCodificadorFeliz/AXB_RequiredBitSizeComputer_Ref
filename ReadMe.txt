@@ -36,6 +36,7 @@ Check-Liste
 
 History
 =======
+05/#15  SS23     (ITS1 P1 AZ#1) A1.6        git.t@github.com:ElCodificadorFeliz/AXB_RequiredBitSizeComputer_Ref             Eclipse 22-12 (4.26.x) ,  (Eclipse)Temurin / (Adopt)OpenJDK 17.0.6+10
 04/#14  SS22     (AI1  P1 AZ#1) A1.6        git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref           Eclipse 22-03 (4.23.x) ,  (Eclipse)Temurin / (AdoptOpenJDK -> Adoptium)OpenJDK 17.0.2+8
 03/#13  SS21     (ITS1 P1 AZ#1) A1.6        git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref           Eclipse 4.19.x (21-03) ,  AdoptOpenJDK 11.0.10+9 ,  JUnit5
 02/#12  SS20     (ITS1 P1 AZ#1) Z1.3        git.HAW-Hamburg.de:SHF/Px/LabExercise/AXB_RequiredBitSizeComputer_Ref           Eclipse 4.15.x  AdoptOpenJDK 11.0.6  (<-11.6.0)

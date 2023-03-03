@@ -1,13 +1,34 @@
 package requiredBitSizeComputer;
 
 
+import stuffYouDontHaveToUnderstand.Version;
+
+
 /**
  * Required Bit Size Computer - see task
  * 
- * @author   Michael Schaefers ;  P1@Hamburg-UAS.eu
- * @version  2017/10/07
+ * @author  Michael Schaefers  ([UTF-8]:"Michael Schäfers");
+ *          Px@Hamburg-UAS.eu
+ * @version {@value #encodedVersion}
  */
 public class RequiredBitSizeComputer {
+    //
+    //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
+    //  ========                               #___~version~___YYYY_MM_DD__dd_
+    final static private long encodedVersion = 2___00001_001___2023_02_28__01L;
+    //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
+    final static private Version version = new Version( encodedVersion );
+    /**
+     * Get decoded version of code {@link TestFrameAutomated}
+     * 
+     * @return decoded version
+     */
+    static public String getDecodedVersion(){ return version.getDecodedVersion(); }
+    // Obiges (ab VERSION) dient nur der Versionierung.
+    
+    
+    
+    
     
     /**
      * compute required bit size to code positive number
