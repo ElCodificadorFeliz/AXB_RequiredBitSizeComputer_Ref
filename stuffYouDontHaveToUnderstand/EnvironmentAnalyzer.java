@@ -6,8 +6,9 @@ package stuffYouDontHaveToUnderstand;
 import java.io.Serializable;
 import java.lang.module.ModuleDescriptor;
 import java.util.Optional;
-
+//
 import org.junit.jupiter.api.Test;
+// deprecated: Warum tut sich JUnit immer so schwer auf einfache&zeitlose(!) Weise die Version zur Verfügung zu stellen?
 import org.junit.platform.runner.JUnitPlatform;
 
 
@@ -15,14 +16,14 @@ import org.junit.platform.runner.JUnitPlatform;
  * Task: For information see ReadMe.txt resp. task
  * 
  * @author  Michael Schaefers  ([UTF-8]:"Michael Schäfers");
- *          Px@Hamburg-UAS.eu
+ *          P1@Hamburg-UAS.eu
  * @version {@value #encodedVersion}
  */
 public class EnvironmentAnalyzer implements Serializable {
     //
     //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
     //  ========                               #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedVersion = 2___00001_003___2023_02_28__01L;
+    final static private long encodedVersion = 2___00001_004___2023_03_03__01L;
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
@@ -72,13 +73,22 @@ public class EnvironmentAnalyzer implements Serializable {
     public static String getJavaVersion(){
         final String rawVersion = System.getProperty( "java.version" );
         if( rawVersion.startsWith("1.") ){
+            //\=> java version: "1.0" - "1.4"
             return String.format( "%s (%s)",  rawVersion.substring( 2 ), rawVersion );
         }else{
-            return rawVersion;
+            //\=> java version: "5.x" - "X.x"
+            final int firstPositionOfDot = rawVersion.indexOf( "." );
+            assert 0<firstPositionOfDot: "unexpected version format";
+            final int mainJavaVersion = Integer.valueOf( rawVersion.substring( 0, firstPositionOfDot ));
+            if( 9 > mainJavaVersion ){
+                //\=> java version: "5.x" - "8.x"
+                return rawVersion;
+            }else{
+                //\=> java version: "9.x" - "X.x"
+                return Runtime.version().toString();                            // ".version()" since Java 9
+            }//if
         }//if
-    }// method()
-    // Note:
-    // Use "Runtime.version()" instead?  (available since Java9)
+    }//method()
     
     /**
      * Determine (JUnit-) Jupiter version
@@ -121,11 +131,11 @@ public class EnvironmentAnalyzer implements Serializable {
         }//try
         return "??? <- could not be determined as result of an unexpected exception";
     }//method()
+    //Note -> see https://stackoverflow.com/questions/59377304/accessing-junit-version-during-runtime
     //
     /**
      * Determine (JUnit-) Platform version<br />
      * Attention: Access to JUnitPlatform is deprecated!
-     * (* Warum tut sich JUnit immer so schwer auf einfache&zeitlose(!) Weise die Version zur Verfügung zu stellen? *)
      * 
      * @return (JUnit-) Platform version
      */
@@ -165,6 +175,6 @@ public class EnvironmentAnalyzer implements Serializable {
         }//try
         return "??? <- could not be determined as result of an unexpected exception";
     }//method()
+    //Note -> see https://stackoverflow.com/questions/59377304/accessing-junit-version-during-runtime
     
 }//class
-//see: https://stackoverflow.com/questions/59377304/accessing-junit-version-during-runtime

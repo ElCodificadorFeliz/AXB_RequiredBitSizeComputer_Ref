@@ -22,7 +22,7 @@ public class GivenCodeVersion implements Serializable {
     //
     //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
     //  ========                               #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedVersion = 2___00001_001___2023_02_28__01L;
+    final static private long encodedVersion = 2___00001_002___2023_03_03__01L;
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     //
