@@ -13,20 +13,21 @@ import java.time.format.DateTimeFormatter;
  * Beautician - see ReadMe.txt resp. task
  *
  * @author  Michael Schaefers  ([UTF-8]:"Michael Schäfers");
- *          Px@Hamburg-UAS.eu 
+ *          P1@Hamburg-UAS.eu 
  * @version {@value #encodedVersion} 
  */
 public class Beautician implements Serializable {
     //
     //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
     //  ========                               #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedVersion = 2___00001_002___2022_06_11__01L;
+    final static private long encodedVersion = 2___00001_003___2023_03_08__01L;
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
     // Obiges (ab VERSION) dient nur der Versionierung
     
-    private static final long serialVersionUID = version.getVersionNumber();
+    // serial version unique ID is based on given code version
+    private static final long serialVersionUID = version.getEncodedVersion();
     
     
     

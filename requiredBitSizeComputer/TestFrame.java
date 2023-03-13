@@ -24,9 +24,8 @@ public class TestFrame {
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     /**
-     * Get decoded version of code {@link TestFrameAutomated}
-     * 
-     * @return decoded version
+     * The method {@link #getDecodedVersion()} delivers the code version as reground/readable String.
+     * @return version as decoded/readable String.
      */
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
     // Obiges (ab VERSION) dient nur der Versionierung.
@@ -55,7 +54,7 @@ public class TestFrame {
         System.out.printf( "Environment:\n" );
         System.out.printf( "    #Cores:                 %d\n",  EnvironmentAnalyzer.getAvailableCores() );
         System.out.printf( "    Java:                   %s\n",  EnvironmentAnalyzer.getJavaVersion() );
-        System.out.printf( "    assert enabled?:        %s\n",  EnvironmentAnalyzer.assertEnabled() );
+        System.out.printf( "    assert enabled?:        %s\n",  EnvironmentAnalyzer.isAssertEnabled() );
         System.out.printf( "\n\n" );
         //
         System.out.printf( "Start of actual test(s)\n" );

@@ -28,45 +28,54 @@ import java.io.Serializable;
  * 
  * @author  Michael Schaefers  ([UTF-8]:"Michael Schäfers");
  *          Px@Hamburg-UAS.eu 
- * @version {@value #encodedOwnClassVersion} 
+ * @version {@value #encodedV2} 
  */
 public class Version implements Serializable {
-    
-    //  VERSION of "Version-class" itself              #---vvvvvvvvv---vvvv-vv-vv--vv
-    //  =======                                        #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedOwnClassVersion = 2___00002_003___2022_06_11__02L;
-    //                                                 #---^^^^^-^^^---^^^^-^^-^^--^^
+    //
+    //--VERSION:--(of "Version-class" itself)--#---vvvvvvvvv---vvvv-vv-vv--vv
+    //  ========                               #___~version~___YYYY_MM_DD__dd_
+    final static private long encodedV2 =      2___00002_008___2023_03_08__05L; // "V2" ::= V^2 = (class) Version Version  resp. Version of the class Version
+    //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
+    //
     static {
-        assert isCodingValid( encodedOwnClassVersion ) : "setup error : faulty version number coded";  // we are all humans - check that "leading one" has NOT got lost
+        assert isCodingValid( encodedV2 ) : "setup error : faulty version number coded";  // we are all humans - check that "leading one" has NOT got lost
     }//static block resp. "static initializer" ~ "class-constructor()"
     //
     private static boolean isCodingValid( final long version ){
         final int leadingDigit = (int)( version / 1__000_000__000_000__000_000L );
         return 1<=leadingDigit && leadingDigit<=2;
     }//method(()
+    //
+    final static private Version version = new Version( encodedV2 );
+    /**
+     * The method {@link #getDecodedVersion()} delivers the code version as reground/readable String.
+     * @return version as decoded/readable String.
+     */
+    static public String getDecodedV2(){ return version.getDecodedVersion(); }
+    // Obiges (ab VERSION) dient nur der Versionierung.
     
-    
-    private static final long serialVersionUID = encodedOwnClassVersion;
+    // serial version unique ID is based on given code version
+    private static final long serialVersionUID = encodedV2;
     
     
     
     
     
     /**
-     * The encoded (client) version number
+     * The encoded (client) version for some "other" class
      */
-    private final long encodedVersionNumber;
+    private final long encodedVersion;
     
     
     
     /**
      * The constructor checks given (client) version number if correctly coded and stores it
      * 
-     * @param encodedVersionNumber  the encoded (client) version number
+     * @param encodedVersion  the encoded (client) version number
      */
-    public Version( final long encodedVersionNumber ){
-        if( ! isCodingValid( encodedVersionNumber )){ throw new IllegalArgumentException( "Faulty coding of version"); }
-        this.encodedVersionNumber = encodedVersionNumber;
+    public Version( final long encodedVersion ){
+        if( ! isCodingValid( encodedVersion )){ throw new IllegalArgumentException( "Faulty coding of version"); }
+        this.encodedVersion = encodedVersion;
     }//constructor()
     
     
@@ -76,8 +85,8 @@ public class Version implements Serializable {
      * 
      * @return version
      */
-    public long getVersionNumber(){
-        return encodedVersionNumber;
+    public long getEncodedVersion(){
+        return encodedVersion;
     }//method()
     
     /**
@@ -94,8 +103,8 @@ public class Version implements Serializable {
         int day = 0;
         int dailyVersion = 0;
         //
-        long tmp = encodedVersionNumber;
-        final int leadingDigit = (int)( encodedVersionNumber / 1__000_000__000_000__000_000L );
+        long tmp = encodedVersion;
+        final int leadingDigit = (int)( encodedVersion / 1__000_000__000_000__000_000L );
         switch( leadingDigit ){
             //  _1___mmmm_sss___YYYY_MM_DD__ddd
             case 1:

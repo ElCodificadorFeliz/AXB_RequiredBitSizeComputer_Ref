@@ -1,3 +1,4 @@
+// This source code is UTF-8 coded - see https://stackoverflow.com/questions/9180981/how-to-support-utf-8-encoding-in-eclipse
 package requiredBitSizeComputer;
 
 
@@ -36,9 +37,8 @@ public class ProposalForAlternativeTestFrame {
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     /**
-     * Get decoded version of code {@link TestFrameAutomated}
-     * 
-     * @return decoded version
+     * The method {@link #getDecodedVersion()} delivers the code version as reground/readable String.
+     * @return version as decoded/readable String.
      */
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
     // Obiges (ab VERSION) dient nur der Versionierung.
@@ -67,7 +67,7 @@ public class ProposalForAlternativeTestFrame {
         System.out.printf( "Environment:\n" );
         System.out.printf( "    #Cores:                 %d\n",  EnvironmentAnalyzer.getAvailableCores() );
         System.out.printf( "    Java:                   %s\n",  EnvironmentAnalyzer.getJavaVersion() );
-        System.out.printf( "    assert enabled?:        %s\n",  EnvironmentAnalyzer.assertEnabled() );
+        System.out.printf( "    assert enabled?:        %s\n",  EnvironmentAnalyzer.isAssertEnabled() );
         System.out.printf( "\n\n" );
         //
         System.out.printf( "Start of actual test(s)\n" );
@@ -80,6 +80,7 @@ public class ProposalForAlternativeTestFrame {
         
         
         
+        // start actual testing
         try{
             final RequiredBitSizeComputer requiredBitSizeComputer = new RequiredBitSizeComputer();
             

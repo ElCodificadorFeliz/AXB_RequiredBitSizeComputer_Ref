@@ -1,5 +1,5 @@
 // This source code is UTF-8 coded - see https://stackoverflow.com/questions/9180981/how-to-support-utf-8-encoding-in-eclipse
-// "Home"-VCS: git@git.HAW-Hamburg.de:shf/Px/LabExercise/ZZZ_SupportStuff[.git]
+// "Home"-VCS:  git@git.HAW-Hamburg.de:shf/Px/LabExercise/ZZZ_SupportStuff[.git]
 package stuffYouDontHaveToUnderstand;
 
 
@@ -21,14 +21,14 @@ public class Herald implements Serializable {
     //
     //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
     //  ========                               #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedVersion = 2___00001_002___2023_02_04__01L;
+    final static private long encodedVersion = 2___00001_003___2023_03_06__01L;
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
     // Obiges (ab VERSION) dient nur der Versionierung
     
     
-    private static final long serialVersionUID = version.getVersionNumber();
+    private static final long serialVersionUID = version.getEncodedVersion();
     
     
     

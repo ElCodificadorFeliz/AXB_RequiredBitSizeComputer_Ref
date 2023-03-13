@@ -23,15 +23,14 @@ public class EnvironmentAnalyzer implements Serializable {
     //
     //--VERSION:-------------------------------#---vvvvvvvvv---vvvv-vv-vv--vv
     //  ========                               #___~version~___YYYY_MM_DD__dd_
-    final static private long encodedVersion = 2___00001_004___2023_03_03__01L;
+    final static private long encodedVersion = 2___00001_006___2023_03_13__01L;
     //-----------------------------------------#---^^^^^-^^^---^^^^-^^-^^--^^
     final static private Version version = new Version( encodedVersion );
     static public String getDecodedVersion(){ return version.getDecodedVersion(); }
     // Obiges (ab VERSION) dient nur der Versionierung
     
-    
-    
-    final static private long  serialVersionUID = version.getVersionNumber();
+    // serial version unique ID is based on given code version
+    final static private long  serialVersionUID = version.getEncodedVersion();
     
     
     
@@ -43,7 +42,7 @@ public class EnvironmentAnalyzer implements Serializable {
      * @return <code>true</code> if assert is enabled,
      *         <code>false</code> otherwise.
      */
-    public static boolean assertEnabled(){
+    public static boolean isAssertEnabled(){
         try {
             assert false : "ASSERT IS ENABLED";
             throw new RuntimeException( "ASSERT IS DISABLED" );
